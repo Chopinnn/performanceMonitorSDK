@@ -49,8 +49,8 @@ export function errorBoundary(err, info) {
 
 export function init(options) {
     setConfig(options);
-    // performance();
-    // error();
+    performance();
+    error();
     behavior();
 }
 

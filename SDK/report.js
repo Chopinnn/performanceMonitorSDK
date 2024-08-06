@@ -17,33 +17,38 @@ export function report(data) {
     });
     // 上报数据，使用图片的方式
     if (config.isImageUpload) {
+        console.log('发送数据img');
         imgRequest(reportData);
     } else {
         // 优先使用 sendBeacon
         if (window.navigator.sendBeacon) {
+            console.log('发送数据sendBeacon');
             return beaconRequest(reportData);
         } else {
+            console.log('发送数据xhr');
             xhrRequest(reportData);
         }
     }
 }
+
 // 批量上报数据
 export function lazyReportBatch(data) {
     addCache(data);
     const dataCache = getCache();
-    console.error('dataCache', dataCache);
+    console.log('dataCache', dataCache);
     if (dataCache.length && dataCache.length > config.batchSize) {
         report(dataCache);
         clearCache();
     }
-    //
 }
+
 // 图片发送数据
 export function imgRequest(data) {
     const img = new Image();
     // http://127.0.0.1:8080/api?data=encodeURIComponent(data)
     img.src = `${config.url}?data=${encodeURIComponent(JSON.stringify(data))}`;
 }
+
 // 普通ajax发送请求数据
 export function xhrRequest(data) {
     if (window.requestIdleCallback) {
