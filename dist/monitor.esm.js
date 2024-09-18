@@ -187,7 +187,7 @@ function report(data) {
 function lazyReportBatch(data) {
   addCache(data);
   var dataCache = getCache();
-  console.log('dataCache', dataCache);
+  console.log('上报数据dataCache', dataCache);
   if (dataCache.length && dataCache.length > config.batchSize) {
     report(dataCache);
     clearCache();
@@ -366,7 +366,7 @@ function observerLCP() {
   observer.observe({
     type: 'largest-contentful-paint',
     buffered: true
-  });
+  }); // LCP是独立的性能条目，不需要像FP和FCP一样先通过通用类型paint再通过name来判断，直接使用type即可
 }
 
 function observerFCP() {
@@ -564,7 +564,7 @@ function onClick() {
   ['mousedown', 'touchstart'].forEach(function (eventType) {
     window.addEventListener(eventType, function (e) {
       var target = e.target;
-      console.warn('click', target);
+      console.warn('用户点击click', target);
       if (target.tagName) {
         var reportData = {
           type: 'behavior',
@@ -639,7 +639,7 @@ window.__webSDK__ = {
   version: '0.0.1'
 };
 
-// 针对Vue项目的错误捕获
+// 针对Vue项目的错误捕获，使用use注册插件
 function install(Vue, options) {
   if (__webEyeSDK__.vue) return;
   __webEyeSDK__.vue = true;
@@ -693,4 +693,3 @@ var webSDK = {
 };
 
 export { webSDK as default, errorBoundary, init, install };
-//# sourceMappingURL=monitor.esm.js.map

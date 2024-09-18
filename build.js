@@ -31,7 +31,7 @@ module.exports = [
             file: resolveFile("./dist/monitor.js"),
             format: "iife",
             name: "monitor",
-            sourcemap: true,
+            sourcemap: false,   // 可以根据错误定位源码。但因为没有接入sourceMap还原的代码，有暴露源码的风险，所以先暂时关闭。
         },
     },
     {
@@ -41,7 +41,7 @@ module.exports = [
             file: resolveFile("./dist/monitor.esm.js"),
             format: "esm",
             name: "monitor",
-            sourcemap: true,
+            sourcemap: false,
         },
     },
     {
@@ -51,7 +51,7 @@ module.exports = [
             file: resolveFile("./dist/monitor.cjs.js"),
             format: "cjs",
             name: "monitor",
-            sourcemap: true,
+            sourcemap: false,
         },
     },
 ];

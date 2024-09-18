@@ -8,7 +8,7 @@ window.__webSDK__ = {
     version: '0.0.1',
 };
 
-// 针对Vue项目的错误捕获
+// 针对Vue项目的错误捕获，使用use注册插件
 export function install(Vue, options) {
     if (__webEyeSDK__.vue) return;
     __webEyeSDK__.vue = true;

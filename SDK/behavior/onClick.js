@@ -4,7 +4,7 @@ export default function onClick() {
     ['mousedown', 'touchstart'].forEach((eventType) => {
         window.addEventListener(eventType, (e) => {
             const target = e.target;
-            console.warn('click', target);
+            console.warn('用户点击click', target);
             if (target.tagName) {
                 const reportData = {
                     type: 'behavior',
