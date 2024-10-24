@@ -49,7 +49,7 @@ export function imgRequest(data) {
     img.src = `${config.url}?data=${encodeURIComponent(JSON.stringify(data))}`;
 }
 
-// 普通ajax发送请求数据
+// 普通xhr发送数据
 export function xhrRequest(data) {
     if (window.requestIdleCallback) {
         window.requestIdleCallback(

@@ -1,7 +1,7 @@
 {
-  "name": "sdk",
-  "version": "1.0.0",
-  "description": "",
+  "name": "chopinnn-monitor",
+  "version": "0.0.2",
+  "description": "前端监控SDK",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,15 @@
     "type": "git",
     "url": "git+https://github.com/Chopinnn/performanceMonitorSDK.git"
   },
-  "author": "",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "chopin",
+    "前端监控",
+    "SDK"
+  ],
+  "author": "chopinnn",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Chopinnn/performanceMonitorSDK/issues"

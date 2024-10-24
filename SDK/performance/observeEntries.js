@@ -1,3 +1,4 @@
+// 分析资源加载性能
 import { lazyReportBatch } from '../report';
 
 export default function observerEntries() {

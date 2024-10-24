@@ -1,12 +1,14 @@
 # 前端性能监控SDK
 
+行为监控   性能监控   错误监控
+
 ## 目录结构
 
 SDK：核心文件
 
 test：测试文件
 
-## 步骤
+## 开发步骤
 
 1. npm start 启动 express 服务
 
@@ -29,3 +31,9 @@ test：测试文件
        monitor.errorBoundary(error,info.componentStack);
    }
    ```
+
+## 使用步骤
+
+1. script直接引入
+2. import导入esm模块
+3. require导入cjs模块
